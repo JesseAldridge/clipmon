@@ -13,3 +13,5 @@ Installation:
 For troubleshooting, you can run it like this:
 
     launchctl unload ~/Library/LaunchAgents/com.jessealdridge.open_clipboard.plist && launchctl load ~/Library/LaunchAgents/com.jessealdridge.open_clipboard.plist && launchctl list | grep jesse && tail -f ~/open_clipboard.log ~/open_clipboard.err
+
+MIT License
