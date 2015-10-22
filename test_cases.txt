@@ -1,0 +1,11 @@
+ReferenceError: get_extra_classes is not defined in /Users/Jesse/Dropbox/CardBrew/03_move/tests/move_test.js (line 25)
+/Users/Jesse/Dropbox/CardBrew/03_move/tests/move_test.js:25
+
+clip_str:   File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/subprocess.py", line 791, in communicate
+/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/subprocess.py:791
+
+at /Users/Jesse/Dropbox/CardBrew/01_chars/chars.js:32
+/Users/Jesse/Dropbox/CardBrew/01_chars/chars.js:32
+
+Grid/server2</<@/Users/Jesse/Dropbox/CardBrew/src/01_server/tests/test_server.js:18:13
+/Users/Jesse/Dropbox/CardBrew/src/01_server/tests/test_server.js:18

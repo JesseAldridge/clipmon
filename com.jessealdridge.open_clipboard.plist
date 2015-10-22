@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.jessealdridge.open_clipboard</string>
+  <key>Program</key>
+  <string>/Users/Jesse/Dropbox/open_clipboard/open_clipboard.py</string>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>StandardOutPath</key>
+  <string>/Users/Jesse/open_clipboard.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/Jesse/open_clipboard.err</string>
+</dict>
+</plist>
