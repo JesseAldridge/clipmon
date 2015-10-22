@@ -6,6 +6,8 @@ When it detects a line of text with a path and a line number, e.g.
 it will attempt to open that path at that line in your text editor.
 
 Installation:
+  
+  Clone the repo.  Edit the plist file to contain right path.  Then run:
 
     ln com.jessealdridge.open_clipboard.plist ~/Library/LaunchAgents/
     launchctl unload ~/Library/LaunchAgents/com.jessealdridge.open_clipboard.plist && launchctl load ~/Library/LaunchAgents/com.jessealdridge.open_clipboard.plist
