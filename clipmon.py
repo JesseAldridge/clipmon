@@ -6,9 +6,10 @@ import clipboard
 def clip_str_to_path_line(clip_str):
   if clip_str.count('\n') > 1:
     return
-                          # file extension
-                    # a path |
-  match = re.search('(/[^@]+\.[a-z]{2,3})[^:]*(line.*?|:)([0-9]+)', clip_str)
+                    #        file extension
+                    #     path      |
+                    #      |        |
+  match = re.search('[^\w](/[^@^:]+\.[a-z]{2,3})[^:]*(line.*?|:)([0-9]+)', clip_str)
   if match:
     return ':'.join([match.group(1), match.group(3)])
 

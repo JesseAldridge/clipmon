@@ -6,14 +6,14 @@ When it detects a line of text with a path and a line number, e.g.
 it will attempt to open that path at that line in your text editor.
 
 Installation:
-  
-  Clone the repo.  Edit the plist file to contain right path.  Then run:
 
-    ln com.jessealdridge.open_clipboard.plist ~/Library/LaunchAgents/
-    launchctl unload ~/Library/LaunchAgents/com.jessealdridge.open_clipboard.plist && launchctl load ~/Library/LaunchAgents/com.jessealdridge.open_clipboard.plist
+  Clone the repo.  Edit the plist file to contain right path.  Then, from the clipmon dir, run:
+
+    ln com.jessealdridge.clipmon.plist ~/Library/LaunchAgents/
+    launchctl unload ~/Library/LaunchAgents/com.jessealdridge.clipmon.plist && launchctl load ~/Library/LaunchAgents/com.jessealdridge.clipmon.plist
 
 For troubleshooting, you can run it like this:
 
-    launchctl unload ~/Library/LaunchAgents/com.jessealdridge.open_clipboard.plist && launchctl load ~/Library/LaunchAgents/com.jessealdridge.open_clipboard.plist && launchctl list | grep jesse && tail -f ~/open_clipboard.log ~/open_clipboard.err
+    launchctl unload ~/Library/LaunchAgents/com.jessealdridge.clipmon.plist && launchctl load ~/Library/LaunchAgents/com.jessealdridge.clipmon.plist && launchctl list | grep jesse && tail -f ~/clipmon.log ~/clipmon.err
 
 MIT License

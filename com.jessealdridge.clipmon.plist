@@ -3,14 +3,14 @@
 <plist version="1.0">
 <dict>
   <key>Label</key>
-  <string>com.jessealdridge.open_clipboard</string>
+  <string>com.jessealdridge.clipmon</string>
   <key>Program</key>
-  <string>/Users/Jesse/Dropbox/open_clipboard/open_clipboard.py</string>
+  <string>/Users/Jesse/Dropbox/clipmon/clipmon.py</string>
   <key>RunAtLoad</key>
   <true/>
   <key>StandardOutPath</key>
-  <string>/Users/Jesse/open_clipboard.log</string>
+  <string>/Users/Jesse/clipmon.log</string>
   <key>StandardErrorPath</key>
-  <string>/Users/Jesse/open_clipboard.err</string>
+  <string>/Users/Jesse/clipmon.err</string>
 </dict>
 </plist>
