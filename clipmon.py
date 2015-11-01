@@ -4,6 +4,7 @@ import time, sys, os, subprocess, re
 import clipboard
 
 def clip_str_to_path_line(clip_str):
+  clip_str = clip_str.replace('http://localhost:5000', os.path.expanduser('~/Dropbox/CardBrew'))
   if clip_str.count('\n') > 1:
     return
                     #        file extension
