@@ -21,3 +21,6 @@ None
 
 /localhost:[0-9]+\/([\w]+)/.exec('localhost:3000/d')
 None
+
+print 10 / ((arrow.now() - arrow.get("2008-09-03T20:56:35.450686Z")).days or 1)
+None
