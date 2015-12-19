@@ -1,0 +1,10 @@
+setup.py
+clipmon/__init__.py
+clipmon/clipmon.py
+clipmon/install.py
+clipmon/test.py
+clipmon.egg-info/PKG-INFO
+clipmon.egg-info/SOURCES.txt
+clipmon.egg-info/dependency_links.txt
+clipmon.egg-info/top_level.txt
+clipmon.egg-info/zip-safe

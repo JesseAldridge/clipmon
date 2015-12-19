@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: clipmon
+Version: 0.0.1
+Summary: Watch your clipboard for path/line-number combos.  Open them in your editor.
+Home-page: https://github.com/JesseAldridge/clipmon
+Author: Jesse Aldridge
+Author-email: JesseAldridge@gmail.com
+License: MIT
+Description: UNKNOWN
+Keywords: clipboard monitor utility
+Platform: UNKNOWN
