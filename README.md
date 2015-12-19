@@ -1,3 +1,5 @@
+Install:
+
     git clone https://github.com/JesseAldridge/clipmon
     cd clipmon
     chmod +x install.sh
