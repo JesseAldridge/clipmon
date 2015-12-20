@@ -1,4 +1,4 @@
-Install:
+Install:  (assumes pip is installed)
 
     git clone https://github.com/JesseAldridge/clipmon
     cd clipmon

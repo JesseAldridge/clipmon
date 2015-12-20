@@ -24,3 +24,6 @@ None
 
 print 10 / ((arrow.now() - arrow.get("2008-09-03T20:56:35.450686Z")).days or 1)
 None
+
+https://api.stockfighter.io/ob/api/venues/AUPEX/stocks/EIH/orders --header "X-Starfighter-Authorization:12345"
+None
