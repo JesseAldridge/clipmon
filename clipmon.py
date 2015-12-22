@@ -3,8 +3,10 @@ import time, sys, os, subprocess, re
 
 import pyperclip
 
+import conf
+
 def clip_str_to_path_line(clip_str):
-  # clip_str = clip_str.replace('http://localhost:5000', os.path.expanduser('~/Dropbox/CardBrew'))
+  clip_str = clip_str.replace('http://localhost:5000/', os.path.expanduser(conf.curr_proj_dir))
   if clip_str.count('\n') > 1:
     return
                     #               file extension
@@ -13,6 +15,9 @@ def clip_str_to_path_line(clip_str):
   match = re.search(r'[^\w](/[^@^:^\\^\(]+\.[a-z]{2,3})[^:]{0,9}(line.*?|:)([0-9]+)', clip_str)
   if match:
     return ':'.join([match.group(1), match.group(3)])
+  match = re.search(r'([^@^:^\\^\(]+\.[a-z]{2,3})[^:]{0,9}(line.*?|:)([0-9]+)', clip_str)
+  if match:
+    return ':'.join([os.path.join(conf.curr_proj_dir, match.group(1)), match.group(3)])
 
 if __name__ == '__main__':
   clip_str = None

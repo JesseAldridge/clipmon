@@ -11,10 +11,10 @@ Grid/server2</<@/Users/Jesse/Dropbox/CardBrew/src/01_server/tests/test_server.js
 /Users/Jesse/Dropbox/CardBrew/src/01_server/tests/test_server.js:18
 
 (http://localhost:5000/src/00_game/00_game.js:20:42)
-/Users/Jesse/Dropbox/CardBrew/src/00_game/00_game.js:20
+<proj_dir>src/00_game/00_game.js:20
 
 at new CommandListener (http://localhost:5000/src/02_commands_server/command_listener.js:6:31)
-/Users/Jesse/Dropbox/CardBrew/src/02_commands_server/command_listener.js:6
+<proj_dir>src/02_commands_server/command_listener.js:6
 
 日本語
 None
@@ -27,3 +27,6 @@ None
 
 https://api.stockfighter.io/ob/api/venues/AUPEX/stocks/EIH/orders --header "X-Starfighter-Authorization:12345"
 None
+
+tests/api_app/templates/test_controller.py:4: in <module>
+<proj_dir>tests/api_app/templates/test_controller.py:4
