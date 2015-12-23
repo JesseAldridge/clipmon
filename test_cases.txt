@@ -30,3 +30,6 @@ None
 
 tests/api_app/templates/test_controller.py:4: in <module>
 <proj_dir>tests/api_app/templates/test_controller.py:4
+
+pgcli postgres://jesse:abc123@foo.bar.baz.amazonaws.com:2345/foo_bar
+None

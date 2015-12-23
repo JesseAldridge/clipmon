@@ -15,7 +15,7 @@ def clip_str_to_path_line(clip_str):
   match = re.search(r'[^\w](/[^@^:^\\^\(]+\.[a-z]{2,3})[^:]{0,9}(line.*?|:)([0-9]+)', clip_str)
   if match:
     return ':'.join([match.group(1), match.group(3)])
-  match = re.search(r'([^@^:^\\^\(]+\.[a-z]{2,3})[^:]{0,9}(line.*?|:)([0-9]+)', clip_str)
+  match = re.search(r'([a-zA-Z_/]+/[a-zA-Z_]+\.[a-z]{2,3})[^:]{0,9}(line.*?|:)([0-9]+)', clip_str)
   if match:
     return ':'.join([os.path.join(conf.curr_proj_dir, match.group(1)), match.group(3)])
 
