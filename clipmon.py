@@ -9,12 +9,16 @@ def clip_str_to_path_line(clip_str):
   clip_str = clip_str.replace('http://localhost:5000/', os.path.expanduser(conf.curr_proj_dir))
   if clip_str.count('\n') > 1:
     return
+
+  # test full path
                     #               file extension
                     #      path            |
                     #       |              |
-  match = re.search(r'[^\w](/[^@^:^\\^\(]+\.[a-z]{2,3})[^:]{0,9}(line.*?|:)([0-9]+)', clip_str)
+  match = re.search(r'[^\w](/[^@^:^\\^\(]+\.[a-z]{2,3})[^:]{0,9}(line.*?|:|\()([0-9]+)', clip_str)
   if match:
     return ':'.join([match.group(1), match.group(3)])
+
+  # test partial path
   match = re.search(r'([a-zA-Z_/]+/[a-zA-Z_]+\.[a-z]{2,3})[^:]{0,9}(line.*?|:)([0-9]+)', clip_str)
   if match:
     return ':'.join([os.path.join(conf.curr_proj_dir, match.group(1)), match.group(3)])
