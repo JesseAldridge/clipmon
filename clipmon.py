@@ -1,5 +1,5 @@
 #!/usr/bin/python
-import time, sys, os, subprocess, re
+import time, sys, os, subprocess, re, traceback
 
 import pyperclip
 
@@ -20,21 +20,32 @@ def clip_str_to_path_line(clip_str):
     return ':'.join([os.path.join(conf.curr_proj_dir, match.group(1)), match.group(3)])
 
 if __name__ == '__main__':
-  clip_str = None
-  while True:
-    prev_value = clip_str
-    try:
-      clip_str = pyperclip.paste()
-      # (the value that was initially on clipboard before running script)
-      if prev_value is None:
-        prev_value = clip_str
-    except UnicodeDecodeError:
-      pass
-    else:
-      if clip_str != prev_value:
-        print 'new value:', clip_str
-        path_line = clip_str_to_path_line(clip_str)
-        if path_line:
-          print 'got path_line:', path_line
-          subprocess.Popen(['/usr/local/bin/atom', path_line])
-    time.sleep(0.5)
+  try:
+    clip_str = None
+    while True:
+      prev_value = clip_str
+      try:
+        clip_str = pyperclip.paste()
+        # (the value that was initially on clipboard before running script)
+        if prev_value is None:
+          prev_value = clip_str
+      except UnicodeDecodeError:
+        pass
+      else:
+        if clip_str != prev_value:
+          print 'new value:', clip_str
+          path_line = clip_str_to_path_line(clip_str)
+          if path_line:
+            subprocess.Popen([conf.editor_cmd, path_line])
+      time.sleep(0.5)
+  except Exception as e:
+    import Tkinter
+    import tkMessageBox
+
+    window = Tkinter.Tk()
+    window.wm_withdraw()
+    exception_str = traceback.format_exc()
+    print 'exception_str:', exception_str
+    tkMessageBox.showinfo(title="Error", message="{}\n{}".format(
+      e.strerror, exception_str))
+    raise
