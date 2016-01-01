@@ -36,3 +36,6 @@ None
 
   /Users/jessealdridge/gigwalk/apps/gigwalk_apps_platform_api/gigwalk_api_app/organization_location_lists/resources.py(101)post()
 /Users/jessealdridge/gigwalk/apps/gigwalk_apps_platform_api/gigwalk_api_app/organization_location_lists/resources.py:101
+
+back/lib/python2.7/site-packages/_pytest/config.py:545: in importconftest
+<proj_dir>back/lib/python2.7/site-packages/_pytest/config.py:545
