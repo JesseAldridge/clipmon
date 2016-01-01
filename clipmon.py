@@ -56,6 +56,5 @@ if __name__ == '__main__':
       e.strerror, exception_str))
 
     sys.stderr.write(str(datetime.now()) + '\n')
-    raise
 
     raise
