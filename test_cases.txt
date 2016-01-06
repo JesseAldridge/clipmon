@@ -39,3 +39,6 @@ None
 
 back/lib/python2.7/site-packages/_pytest/config.py:545: in importconftest
 <proj_dir>back/lib/python2.7/site-packages/_pytest/config.py:545
+
+./gigwalk_api_app/lib/gigwalk_api.py:175:1: W293 blank line contains whitespace
+<proj_dir>gigwalk_api_app/lib/gigwalk_api.py:175

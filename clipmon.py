@@ -16,14 +16,17 @@ def clip_str_to_path_line(clip_str):
                     #      path            |
                     #       |              |
   match = re.search(r'[^\w](/[^@^:^\\^\(]+\.[a-z]{2,3})[^:]{0,9}(line.*?|:|\()([0-9]+)', clip_str)
-  if match:
+  if match and os.path.exists(match.group(1)):
     return ':'.join([match.group(1), match.group(3)])
 
   # test partial path
   match = re.search(
     r'([a-zA-Z_/\-\.0-9]+/[a-zA-Z_0-9\-]+\.[a-z]{2,3})[^:]{0,9}(line.*?|:)([0-9]+)', clip_str)
   if match:
-    return ':'.join([os.path.join(conf.curr_proj_dir, match.group(1)), match.group(3)])
+    partial_path = match.group(1)
+    if partial_path.startswith('./'):
+      partial_path = partial_path.replace('./', '')
+    return ':'.join([os.path.join(conf.curr_proj_dir, partial_path), match.group(3)])
 
 if __name__ == '__main__':
   try:
