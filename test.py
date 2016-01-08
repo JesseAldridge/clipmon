@@ -1,3 +1,5 @@
+import os
+
 import clipmon, conf
 
 with open('test_cases.txt') as f:
@@ -9,7 +11,8 @@ for i in range(0, len(lines), 3):
     expected = None
   actual = clipmon.clip_str_to_path_line(test_line)
   expected, actual = [
-    s.replace('<proj_dir>', conf.curr_proj_dir) if s else None for s in (expected, actual)]
+    os.path.expanduser(s.replace('<proj_dir>', conf.curr_proj_dir))
+    if s else None for s in (expected, actual)]
   print 'line:    ', test_line
   print 'expected:', expected
   print 'actual:  ', actual

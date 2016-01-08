@@ -44,7 +44,7 @@ if __name__ == '__main__':
         if clip_str != prev_value:
           print 'new value:', clip_str
           path_line = clip_str_to_path_line(clip_str)
-          if path_line:
+          if path_line and os.path.exists(path_line.rsplit(':', 1)[0]):
             subprocess.Popen([conf.editor_cmd, path_line])
       time.sleep(0.5)
   except Exception as e:
