@@ -1,3 +1,5 @@
+![Travis status](https://travis-ci.org/JesseAldridge/clipmon.svg?branch=master)
+
 Install:  (assumes pip is installed)
 
     git clone https://github.com/JesseAldridge/clipmon
