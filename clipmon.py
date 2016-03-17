@@ -1,10 +1,5 @@
 #!/usr/bin/python
-import time
-import sys
-import os
-import subprocess
-import re
-import traceback
+import time, sys, os, subprocess, re, traceback
 from datetime import datetime
 
 import pyperclip
@@ -12,11 +7,10 @@ import pyperclip
 import conf
 
 
-def clip_str_to_path_line(clip_str):
-    clip_str = clip_str.replace('http://localhost:5000/', os.path.expanduser(conf.curr_proj_dir))
+def clip_str_to_path_line(clip_str, proj_dir):
     if clip_str.count('\n') > 1:
         return
-
+    clip_str = clip_str.replace('http://localhost:5000/', proj_dir)
     # test full path
     match = re.search(
         #                   file extension
@@ -33,7 +27,7 @@ def clip_str_to_path_line(clip_str):
         partial_path = match.group(1)
         if partial_path.startswith('./'):
             partial_path = partial_path.replace('./', '')
-        return ':'.join([os.path.join(conf.curr_proj_dir, partial_path), match.group(3)])
+        return ':'.join([os.path.join(proj_dir, partial_path), match.group(3)])
 
 if __name__ == '__main__':
     try:
@@ -50,9 +44,11 @@ if __name__ == '__main__':
             else:
                 if clip_str != prev_value:
                     print 'new value:', clip_str
-                    path_line = clip_str_to_path_line(clip_str)
-                    if path_line and os.path.exists(path_line.rsplit(':', 1)[0]):
-                        subprocess.Popen([conf.editor_cmd, path_line])
+                    for proj_dir in conf.curr_proj_dirs:
+                        path_line = clip_str_to_path_line(clip_str, proj_dir)
+                        if path_line and os.path.exists(path_line.rsplit(':', 1)[0]):
+                            subprocess.Popen([conf.editor_cmd, path_line])
+                            break
             time.sleep(0.5)
     except Exception as e:
         import Tkinter
