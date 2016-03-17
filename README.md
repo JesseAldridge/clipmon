@@ -8,7 +8,7 @@ Install:  (assumes pip is installed)
     ./install.sh
 
 Modify `conf.py` to set your editor command.
-You can also specify a list of project paths here.  Then clipmon will work with relative paths.
+You can also specify a list of project paths here; then clipmon will work with relative paths.
 
 -----
 
