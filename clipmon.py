@@ -62,7 +62,7 @@ if __name__ == '__main__':
                 if clip_str == prev_value:
                     continue
                 print 'new value:', clip_str
-                path_line = clip_str_to_path_line(clip_str, proj_dir)
+                path_line = clip_str_to_path_line(clip_str)
                 subprocess.Popen([conf.editor_cmd, path_line])
             time.sleep(0.5)
     except Exception as e:
@@ -74,7 +74,7 @@ if __name__ == '__main__':
         exception_str = traceback.format_exc()
         print 'exception_str:', exception_str
         tkMessageBox.showinfo(title="Error", message="{}\n{}".format(
-            e.strerror, exception_str))
+            str(e), exception_str))
 
         sys.stderr.write(str(datetime.now()) + '\n')
 
