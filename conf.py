@@ -12,4 +12,5 @@ editor_cmd = os.path.expanduser('~/Dropbox/bin/subl')
 
 # ----- End of your configuration. ------
 
+test_whitelist = set()
 curr_proj_dirs = [s + '/' if not s.endswith('/') else s for s in curr_proj_dirs]

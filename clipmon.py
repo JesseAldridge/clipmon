@@ -7,18 +7,19 @@ import pyperclip
 import conf
 
 
-def clip_str_to_path_line(clip_str, proj_dir):
+def clip_str_to_path_line(clip_str):
     if clip_str.count('\n') > 1:
         return
-    clip_str = clip_str.replace('http://localhost:5000/', proj_dir)
     # test full path
-    match = re.search(
-        #                   file extension
-        #        path             |
-        #          |              |
-        r'[^\w^\.](/[^@^:^\\^\(]+\.[a-z]{2,3})[^:]{0,9}(line.*?|:|\()([0-9]+)', clip_str)
-    if match:
-        return ':'.join([match.group(1), match.group(3)])
+    result_line = test_full_match(clip_str)
+    if result_line:
+        return result_line
+    else:
+        for proj_dir in conf.curr_proj_dirs:
+            replaced_str = clip_str.replace('http://localhost:5000/', proj_dir)
+            result_line = test_full_match(replaced_str)
+            if result_line:
+                return result_line
 
     # test partial path
     match = re.search(
@@ -27,7 +28,23 @@ def clip_str_to_path_line(clip_str, proj_dir):
         partial_path = match.group(1)
         if partial_path.startswith('./'):
             partial_path = partial_path.replace('./', '')
-        return ':'.join([os.path.join(proj_dir, partial_path), match.group(3)])
+        for proj_dir in conf.curr_proj_dirs:
+            full_path = os.path.join(proj_dir, partial_path)
+            if path_exists(full_path):
+                return ':'.join([full_path, match.group(3)])
+
+def test_full_match(clip_str):
+    match = re.search(
+        #             file extension
+        # path            |
+        #  |              |
+        r'(/[^@^:^\\^\(]+\.[a-z]{2,3})[^:]{0,9}(line.*?|:|\()([0-9]+)', clip_str)
+    if match and path_exists(match.group(1)):
+        return ':'.join([match.group(1), match.group(3)])
+
+def path_exists(path):
+    return path in conf.test_whitelist if conf.test_whitelist else os.path.exists(path)
+
 
 if __name__ == '__main__':
     try:
@@ -42,13 +59,11 @@ if __name__ == '__main__':
             except UnicodeDecodeError:
                 pass
             else:
-                if clip_str != prev_value:
-                    print 'new value:', clip_str
-                    for proj_dir in conf.curr_proj_dirs:
-                        path_line = clip_str_to_path_line(clip_str, proj_dir)
-                        if path_line and os.path.exists(path_line.rsplit(':', 1)[0]):
-                            subprocess.Popen([conf.editor_cmd, path_line])
-                            break
+                if clip_str == prev_value:
+                    continue
+                print 'new value:', clip_str
+                path_line = clip_str_to_path_line(clip_str, proj_dir)
+                subprocess.Popen([conf.editor_cmd, path_line])
             time.sleep(0.5)
     except Exception as e:
         import Tkinter
