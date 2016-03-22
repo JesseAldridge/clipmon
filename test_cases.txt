@@ -45,3 +45,6 @@ back/lib/python2.7/site-packages/_pytest/config.py:545: in importconftest
 
 /Users/jessealdridge/Dropbox/gigwalk/apps/gigwalk_apps_platform_api/back/lib/python2.7/site-packages/_pytest/core.py(521)__call__()
 /Users/jessealdridge/Dropbox/gigwalk/apps/gigwalk_apps_platform_api/back/lib/python2.7/site-packages/_pytest/core.py:521
+
+SyntaxError: /Users/jessealdridge/Dropbox/gigwalk/apps/api-tests/test/index.js: Unexpected token (11:12)
+/Users/jessealdridge/Dropbox/gigwalk/apps/api-tests/test/index.js:11

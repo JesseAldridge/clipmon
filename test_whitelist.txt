@@ -10,3 +10,4 @@
 /Users/jessealdridge/Dropbox/gigwalk/apps/gigwalk_apps_platform_api/gigwalk_api_app/organization_location_lists/resources.py
 /Users/jessealdridge/Dropbox/gigwalk/apps/gigwalk_apps_platform_api/tests/api_app/templates/test_controller.py
 /Users/jessealdridge/gigwalk/apps/gigwalk_apps_platform_api/gigwalk_api_app/organization_location_lists/resources.py
+/Users/jessealdridge/Dropbox/gigwalk/apps/api-tests/test/index.js

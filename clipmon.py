@@ -21,7 +21,8 @@ def test_full_match(clip_str):
         #             file extension
         # path            |
         #  |              |
-        r'(/[^@^:^\\^\(]+\.[a-z]{2,3})[^:]{0,9}(line.*?|:|\()([0-9]+)', clip_str)
+        r'(/[^@^:^\\^\(]+\.[a-z]{2,3}).*?(line.*?|:|\()([0-9]+)', clip_str)
+        # r'(/[^@^:^\\^\(]+\.[a-z]{2,3})[^:]{0,9}(line.*?|:|\()([0-9]+)', clip_str)
     if match and path_exists(match.group(1)):
         return ':'.join([match.group(1), match.group(3)])
 
@@ -36,7 +37,7 @@ def test_repl_localhost(clip_str):
 def test_parital_path(clip_str):
     # test partial path
     match = re.search(
-        r'([a-zA-Z_/\-\.0-9]+/[a-zA-Z_0-9\-]+\.[a-z]{2,3})[^:]{0,9}(line.*?|:)([0-9]+)', clip_str)
+        r'([a-zA-Z_/\-\.0-9]+/[a-zA-Z_0-9\-]+\.[a-z]{2,3}).*?(line.*?|:)([0-9]+)', clip_str)
     if match:
         partial_path = match.group(1)
         if partial_path.startswith('./'):
