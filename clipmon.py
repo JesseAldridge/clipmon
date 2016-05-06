@@ -71,7 +71,7 @@ if __name__ == '__main__':
                 path_line = clip_str_to_path_line(clip_str)
                 if path_line:
                     subprocess.Popen([conf.editor_cmd, path_line])
-            time.sleep(0.5)
+            time.sleep(2)
     except Exception as e:
         import Tkinter
         import tkMessageBox
