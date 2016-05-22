@@ -55,9 +55,13 @@ def path_exists(path):
 if __name__ == '__main__':
     try:
         clip_str = None
+        is_first_run = True
         while True:
             prev_value = clip_str
             try:
+                if not is_first_run:
+                    time.sleep(2)
+                is_first_run = False
                 clip_str = pyperclip.paste()
                 # (the value that was initially on clipboard before running script)
                 if prev_value is None:
@@ -71,7 +75,6 @@ if __name__ == '__main__':
                 path_line = clip_str_to_path_line(clip_str)
                 if path_line:
                     subprocess.Popen([conf.editor_cmd, path_line])
-            time.sleep(2)
     except Exception as e:
         import Tkinter
         import tkMessageBox
