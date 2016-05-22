@@ -60,7 +60,7 @@ if __name__ == '__main__':
             prev_value = clip_str
             try:
                 if not is_first_run:
-                    time.sleep(2)
+                    time.sleep(1)
                 is_first_run = False
                 clip_str = pyperclip.paste()
                 # (the value that was initially on clipboard before running script)
