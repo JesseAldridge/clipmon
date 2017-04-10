@@ -3,8 +3,7 @@ import os
 # ----- Specify your configuration here. -----
 
 curr_proj_dirs = [
-  '/Users/jessealdridge/Dropbox/gigwalk/apps/gigwalk_apps_platform_api',
-  '/Users/Jesse/Dropbox/CardBrew'
+  '/Users/jesse_aldridge/airlab/repos/airbnb',
 ]
 
 # editor_cmd = '/usr/local/bin/atom'
