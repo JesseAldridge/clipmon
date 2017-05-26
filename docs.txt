@@ -1,0 +1,6 @@
+while True:
+  if clip_str == prev_value:
+    continue
+  clip_str_to_path_line(clip_str)
+    for f in test_replacements, test_partial_path:
+      result_line = f(clip_str)
