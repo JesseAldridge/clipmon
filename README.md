@@ -23,5 +23,7 @@ it will attempt to open that path in your text editor at that line.
 
 Uninstall:
 
+```
 # From clipmon directory
 launchctl unload com.jca.clipmon.plist
+```
