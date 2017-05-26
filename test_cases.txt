@@ -1,20 +1,26 @@
+SyntaxError: /Users/jessealdridge/gigwalk/apps/api-tests/test/index.js: Unexpected token (11:12)
+~/gigwalk/apps/api-tests/test/index.js:11
+
+tests/api_app/templates/test_controller.py:4: in <module>
+~/gigwalk/apps/gigwalk_apps_platform_api/tests/api_app/templates/test_controller.py:4
+
 ReferenceError: get_extra_classes is not defined in /Users/Jesse/Dropbox/CardBrew/03_move/tests/move_test.js (line 25)
-/Users/Jesse/Dropbox/CardBrew/03_move/tests/move_test.js:25
+~/Dropbox/CardBrew/03_move/tests/move_test.js:25
 
 clip_str:   File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/subprocess.py", line 791, in communicate
 /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/subprocess.py:791
 
 at /Users/Jesse/Dropbox/CardBrew/01_chars/chars.js:32
-/Users/Jesse/Dropbox/CardBrew/01_chars/chars.js:32
+~/Dropbox/CardBrew/01_chars/chars.js:32
 
 Grid/server2</<@/Users/Jesse/Dropbox/CardBrew/src/01_server/tests/test_server.js:18:13
-/Users/Jesse/Dropbox/CardBrew/src/01_server/tests/test_server.js:18
+~/Dropbox/CardBrew/src/01_server/tests/test_server.js:18
 
 (http://localhost:5000/src/00_game/00_game.js:20:42)
-/Users/Jesse/Dropbox/CardBrew/src/00_game/00_game.js:20
+~/Dropbox/CardBrew/src/00_game/00_game.js:20
 
 at new CommandListener (http://localhost:5000/src/02_commands_server/command_listener.js:6:31)
-/Users/Jesse/Dropbox/CardBrew/src/02_commands_server/command_listener.js:6
+~/Dropbox/CardBrew/src/02_commands_server/command_listener.js:6
 
 日本語
 None
@@ -28,23 +34,20 @@ None
 https://api.stockfighter.io/ob/api/venues/AUPEX/stocks/EIH/orders --header "X-Starfighter-Authorization:12345"
 None
 
-tests/api_app/templates/test_controller.py:4: in <module>
-/Users/jessealdridge/Dropbox/gigwalk/apps/gigwalk_apps_platform_api/tests/api_app/templates/test_controller.py:4
-
 pgcli postgres://jesse:abc123@foo.bar.baz.amazonaws.com:2345/foo_bar
 None
 
-  /Users/jessealdridge/Dropbox/gigwalk/apps/gigwalk_apps_platform_api/gigwalk_api_app/organization_location_lists/resources.py(101)post()
-/Users/jessealdridge/Dropbox/gigwalk/apps/gigwalk_apps_platform_api/gigwalk_api_app/organization_location_lists/resources.py:101
+  /Users/jessealdridge/gigwalk/apps/gigwalk_apps_platform_api/gigwalk_api_app/organization_location_lists/resources.py(101)post()
+~/gigwalk/apps/gigwalk_apps_platform_api/gigwalk_api_app/organization_location_lists/resources.py:101
 
 back/lib/python2.7/site-packages/_pytest/config.py:545: in importconftest
-/Users/jessealdridge/Dropbox/gigwalk/apps/gigwalk_apps_platform_api/back/lib/python2.7/site-packages/_pytest/config.py:545
+~/gigwalk/apps/gigwalk_apps_platform_api/back/lib/python2.7/site-packages/_pytest/config.py:545
 
 ./gigwalk_api_app/lib/gigwalk_api.py:175:1: W293 blank line contains whitespace
-/Users/jessealdridge/Dropbox/gigwalk/apps/gigwalk_apps_platform_api/gigwalk_api_app/lib/gigwalk_api.py:175
+~/gigwalk/apps/gigwalk_apps_platform_api/gigwalk_api_app/lib/gigwalk_api.py:175
 
-/Users/jessealdridge/Dropbox/gigwalk/apps/gigwalk_apps_platform_api/back/lib/python2.7/site-packages/_pytest/core.py(521)__call__()
-/Users/jessealdridge/Dropbox/gigwalk/apps/gigwalk_apps_platform_api/back/lib/python2.7/site-packages/_pytest/core.py:521
+/Users/jessealdridge/gigwalk/apps/gigwalk_apps_platform_api/back/lib/python2.7/site-packages/_pytest/core.py(521)__call__()
+~/gigwalk/apps/gigwalk_apps_platform_api/back/lib/python2.7/site-packages/_pytest/core.py:521
 
-SyntaxError: /Users/jessealdridge/Dropbox/gigwalk/apps/api-tests/test/index.js: Unexpected token (11:12)
-/Users/jessealdridge/Dropbox/gigwalk/apps/api-tests/test/index.js:11
+  from /mnt/airlab/repos/rookery/app/mailers/homes_collections_mailer.rb:32:in `scheduled_to_partner'
+~/airlab/repos/rookery/app/mailers/homes_collections_mailer.rb:32
