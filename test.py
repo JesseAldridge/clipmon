@@ -20,6 +20,7 @@ test_paths = [
   '~/gigwalk/apps/gigwalk_apps_platform_api/back/lib/python2.7/site-packages/_pytest/core.py',
   '~/gigwalk/apps/api-tests/test/index.js',
   '~/airlab/repos/rookery/app/mailers/homes_collections_mailer.rb',
+  '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/subprocess.py',
 ]
 paths_to_rm = []
 for path in test_paths:
