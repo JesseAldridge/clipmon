@@ -7,16 +7,16 @@ import pyperclip
 import conf
 
 
-def clip_str_to_path_line(clip_str):
+def clip_str_to_path_line(clip_str, path_exists=os.path.exists):
   if clip_str.count('\n') > 1:
     return
 
   for f in test_replacements, test_partial_path:
-    result_line = f(clip_str)
+    result_line = f(clip_str, path_exists)
     if result_line:
       return result_line
 
-def test_replacements(clip_str):
+def test_replacements(clip_str, path_exists):
   replaced_str = clip_str
   for find_regex, replace_str in conf.find_replace_map:
     replaced_str = re.sub(find_regex, replace_str, replaced_str)
@@ -26,7 +26,7 @@ def test_replacements(clip_str):
     #    path               |
     #     |                 |
     r'((?:~|/)[^@^:^\\^\(]+\.[a-z]{2,3}).*(?:line.*?|\()([0-9]+)', replaced_str)
-  if match and os.path.exists(os.path.expanduser(match.group(1))):
+  if match and path_exists(os.path.expanduser(match.group(1))):
     return ':'.join([match.group(1), match.group(2)])
 
   match = re.search(
@@ -34,10 +34,10 @@ def test_replacements(clip_str):
     #   path              |
     #    |                |
     r'((?:~|/)[^@^:^\\^\(]+\.[a-z]{2,3}):([0-9]+)', replaced_str)
-  if match and os.path.exists(os.path.expanduser(match.group(1))):
+  if match and path_exists(os.path.expanduser(match.group(1))):
     return ':'.join([match.group(1), match.group(2)])
 
-def test_partial_path(clip_str):
+def test_partial_path(clip_str, path_exists):
   match = re.search(
     r'([a-zA-Z_/\-\.0-9]+/[a-zA-Z_0-9\-]+\.[a-z]{2,3}).*?(line.*?|:)([0-9]+)', clip_str)
   if match:
@@ -46,7 +46,7 @@ def test_partial_path(clip_str):
       partial_path = partial_path.replace('./', '')
     for proj_dir in conf.curr_proj_dirs:
       full_path = os.path.join(proj_dir, partial_path)
-      if os.path.exists(os.path.expanduser(full_path)):
+      if path_exists(os.path.expanduser(full_path)):
         return ':'.join([full_path, match.group(3)])
 
 
