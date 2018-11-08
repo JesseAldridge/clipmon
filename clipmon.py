@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/local/bin/python3
 import time, sys, os, subprocess, re, traceback
 from datetime import datetime
 
@@ -69,7 +69,7 @@ if __name__ == '__main__':
       else:
         if clip_str == prev_value:
           continue
-        print 'new value:', clip_str
+        print('new value:', clip_str)
         path_line = clip_str_to_path_line(clip_str)
         if path_line:
           subprocess.Popen([conf.editor_cmd, path_line])
@@ -80,7 +80,7 @@ if __name__ == '__main__':
     window = Tkinter.Tk()
     window.wm_withdraw()
     exception_str = traceback.format_exc()
-    print 'exception_str:', exception_str
+    print('exception_str:', exception_str)
     tkMessageBox.showinfo(title="Error", message="{}\n{}".format(
       str(e), exception_str))
 

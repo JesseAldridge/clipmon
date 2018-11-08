@@ -3,7 +3,7 @@ import os, shutil
 import clipmon
 import conf
 
-
+1/0
 test_paths = {os.path.expanduser(path) for path in (
   '~/Dropbox/CardBrew/03_move/tests/move_test.js',
   '~/Dropbox/CardBrew/01_chars/chars.js',
